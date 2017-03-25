@@ -6,6 +6,10 @@ iOS platform available - Android coming soon
 Hi guys, if you need to show a link in your apps, make it looking like is embedded withouth present any other modal view or controller, than this plugin is probably for you.
 Giving to the plugin the new sizes of the frame and a url address, it will create your new UIWebView.
 
+
+![alt tag](https://github.com/Fabiolino88/Native-Embedded-WebView-for-Cordova/blob/master/Example.png)
+
+
 ```
 cordova plugin add https://github.com/Fabiolino88/Native-Embedded-WebView-for-Cordova
 ```
