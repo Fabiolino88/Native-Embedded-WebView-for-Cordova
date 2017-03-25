@@ -1,0 +1,33 @@
+<plugin 
+    xmlns="http://com.fsantoro/EmbeddedWebView"
+    id="com.fsantoro.EmebeddedWebView"
+    version="1.0.0">
+
+    <name>EmbeddedWebView</name>
+    <description>Embed a new ui webview in your cordova app</description>
+    <license>Fabio Santoro</license>
+    <keyword>cordova,webview,embedded,link</keyword>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/embeddedwebview.js" name="embeddedwebview">
+        <clobbers target="window.cordova.plugins.EmbeddedWebView" />
+    </js-module>
+
+    <!-- ios -->
+     <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="EmbeddedWebView">
+                <param name="ios-package" value="EmbeddedWebView"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/EmbeddedWebView.h" />
+        <source-file src="src/ios/EmbeddedWebView.m" />
+        <framework src="Foundation.framework" />
+    </platform>
+
+    <!-- Android platform coming soon -->
+
+</plugin>
