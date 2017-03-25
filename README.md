@@ -27,6 +27,7 @@ declare var cordova:any;
 ```
 
 and after you can finally add the webview to your view
+(the sizes and position needs to be in pixel)
 
 ```
 var embeddedWebview: any = cordova.plugins.EmbeddedWebView;
@@ -35,17 +36,40 @@ var optionsObj = {
     webview_height: 400,
     webview_position_x: 0,
     webview_position_y: 64,
-    url: 'https://www.google.com',
-    showIosToolBar: false,
-    toolBarStyle: "dark",
-    showSpinnerWhileLoading: true
+    url: 'YOUR URL',
+    showIosToolBar: true,  //This will show a toolbar at the bottom of the webview with back and forward button
+    toolBarStyle: "dark", //You can use dark or light style for the toolbar
+    showSpinnerWhileLoading: true  //If you want to show a spinner while is loading the pages
 };
 
-
+//Open the webview
 embeddedWebview.showEmbeddedWebView(function(success: any){
       console.log('Printing on success: ', success);
     }, function(error: any) {
       console.log('Printing on error: ', error);
-    }, optObj)
-};
+    }, optObj);
+    
+
+//Remove the webview from the view
+embeddedWebView.closeEmbeddedWebView(function(success) {
+        console.log('WebView removed with success');
+    }, function(error: any) {
+        console.log('WebView not removed with error: ', error);
+    });
+    
+
+//History Back
+embeddedWebview.webviewHistoryBack(function(success) {
+        console.log('History Back success: ', success);
+    }, function(error) {
+        console.log('History Back Error: ', error);
+    });
+    
+
+//History Forward
+embeddedWebview.webviewHistoryForward(function(success) {
+        console.log('History Forward success: ', success);
+    }, function(error) {
+        console.log('History Forward Error: ', error);
+    });
 ```
